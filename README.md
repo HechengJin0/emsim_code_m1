@@ -62,3 +62,4 @@ InstalledDir: /Library/Developer/CommandLineTools/usr/bin
 
 ### atp3
 update OX software
+https://apple.stackexchange.com/questions/360009/how-to-install-clang-specifically 
