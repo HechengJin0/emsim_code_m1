@@ -21,7 +21,7 @@ InstalledDir: /Library/Developer/CommandLineTools/usr/bin
 `clang: error: the clang compiler does not support '-march=native'`
 https://stackoverflow.com/questions/65966969/why-does-march-native-not-work-on-apple-m1 
 
-### atp 1
+### attempt 1
 change ` -march=native` to `-mcpu=apple-a14`
 ```CFLAGS=-std=gnu11 -g0 -O2 -Wall -Wextra -mcpu=apple-a14 -ftree-vectorize -mcmodel=medium ```
 ```
@@ -48,7 +48,10 @@ clang: note: diagnostic msg:
 ********************
 make: *** [auxiliary.o] Error 70
 ```
-### atp2
+
+`-mcpu=apple-a14` or `-mcpu=apple-a11` not work. 
+
+### attempt 2
 upgrade clang
 ```
 brew install llvm
@@ -62,8 +65,8 @@ InstalledDir: /Library/Developer/CommandLineTools/usr/bin
 upgrade clang failed.
 
 
-### atp3
-update OX software 
+### attempt 3
+update OX software BigSur->Ventura
 https://apple.stackexchange.com/questions/360009/how-to-install-clang-specifically 
 `macOS Ventura Version 13.5`
 
@@ -100,5 +103,7 @@ clang: note: diagnostic msg:
 ********************
 make: *** [auxiliary.o] Error 70
 ```
+
+`clang` is `14.0.3`. probably have to check Xcode. 
 
 
