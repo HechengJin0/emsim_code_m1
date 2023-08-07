@@ -141,7 +141,7 @@ docker image ls
 ## 4. check docker image
 `docker scout quickview tsantini/image_processing` 
 
-## 5. access docker image
+## 5. access docker image and run emsim
 ```
 jin@Jins-Mac-mini test_code % docker run -i -t --entrypoint='/bin/bash' --rm --security-opt=apparmor:unconfined -v /Users/jin/Desktop/emsim_code/test_code:/test_code tsantini/image_processing
 root@e3d6f17d0c6a:~# cd test_code/code/
