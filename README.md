@@ -123,3 +123,30 @@ emsim.c:20:10: fatal error: 'argp.h' file not found
 make: *** [emsim.o] Error 1
 ```
 probably related to https://github.com/yhg926/public_kssd/issues/2 
+
+
+# run docker in m1
+## 1. download docker 
+https://docs.docker.com/desktop/install/mac-install/ 
+
+## 2. check installation
+```
+docker --help
+docker run --rm hello-world
+docker image ls
+```
+## 3. pull docker image
+```docker pull tsantini/image_processing```
+
+## 4. check docker image
+`docker scout quickview tsantini/image_processing` 
+
+## 5. access docker image
+```
+jin@Jins-Mac-mini test_code % docker run -i -t --entrypoint='/bin/bash' --rm --security-opt=apparmor:unconfined -v /Users/jin/Desktop/emsim_code/test_code:/test_code tsantini/image_processing
+root@e3d6f17d0c6a:~# cd test_code/code/
+root@e3d6f17d0c6a:/test_code/code# make
+root@e3d6f17d0c6a:/test_code/code# cp emsim ..
+root@e3d6f17d0c6a:/test_code/code# make clean
+root@e3d6f17d0c6a:/test_code# ./emsim --demo -i geometry -o demo_sim
+```
