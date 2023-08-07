@@ -106,4 +106,19 @@ make: *** [auxiliary.o] Error 70
 
 `clang` is `14.0.3`. probably have to check Xcode. 
 
+### attempt 4
+change `-mcmodel=medium` to `-mcmodel=large`
 
+```
+jin@Jins-Mac-mini code % make
+  CC    auxiliary.o
+  CC    bounds.o
+  CC    calculations.o
+  CC    dft_module.o
+  CC    emsim.o
+emsim.c:20:10: fatal error: 'argp.h' file not found
+#include <argp.h>
+         ^~~~~~~~
+1 error generated.
+```
+make: *** [emsim.o] Error 1
